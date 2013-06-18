@@ -1,0 +1,288 @@
+/*------------------------------------------------*/
+/*-----------------[RESET]------------------------*/
+/*------------------------------------------------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q {	quotes: none; }
+
+abbr, code{
+	display: none;
+}
+p.form-allowed-tags{
+	display: none;
+}
+
+blockquote:before, blockquote:after,q:before, q:after { content: ''; content: none; }
+
+/* remember to define focus styles! */
+:focus { outline: 0; }
+
+/* remember to highlight inserts somehow! */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+article, aside, footer, header, hgroup, nav, section { display: block; }
+
+/*------------------------------------------------*/
+/*-----------------[BASIC STYLES]-----------------*/
+/*------------------------------------------------*/
+
+html { -webkit-font-smoothing: antialiased; }
+body { font-family:"PT Sans", "PT Sans Caption", "PT Sans Narrow"; font-size: 16px; color: #4c4c4c; background-color: #ffffff;  }
+
+a { text-decoration: none; cursor: pointer; color:#4c4c4c;}
+a:hover { text-decoration: underline; }
+.clear { clear: both; }
+.ui-tabs-hide { display: none; }
+br.clear { margin: 0px; padding: 0px; }
+
+h1, h2, h3, h4, h5, h6 { padding-bottom: 5px; color: #111; line-height: 1em; font-weight: normal; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #111; }
+h1 { font-size: 30px; }
+h2 { font-size: 24px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+p { padding-bottom: 10px; line-height: 20px; }
+strong { font-weight: bold; color: #1c1c1c; }
+cite, em, i { font-style: italic; }
+pre, code { font-family:"PT Sans", "PT Sans Caption", "PT Sans Narrow"; margin-bottom: 10px; }
+ins { text-decoration: none; }
+sup, sub { height: 0; line-height: 1; position: relative; vertical-align: baseline; }
+sup { bottom: 0.8em; }
+sub { top: 0.3em; }
+dl { margin: 0 0 1.5em 0; }
+dl dt { font-weight: bold; }
+dd  { margin-left: 1.5em;}
+blockquote  { margin: 1.5em; padding: 1em; color: #666666; background: #e6e6e6; font-style: italic; border: 1px solid #dcdcdc; }
+blockquote p { padding-bottom: 0px; }
+p a{color:#4c4c4c;}
+
+input[type=text],input.text, input.title, textarea, select { background-color:#fff; border:1px solid #bbb; padding: 2px; color: #4e4e4e; }
+input[type=text]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus { border-color:#2D3940; color: #3e3e3e; }
+input[type=text], input.text, input.title, textarea, select { margin:0.5em 0; }
+textarea { padding: 4px; }
+
+img#about-image { float: left; margin: 3px 8px 8px 0px; }
+
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both;  }
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+@urlRoot : 'http://192.168.0.222/Universal-channel/images/';
+body {
+	background: url('@{urlRoot}bg.jpg');
+}
+.wrapper {
+	position: absolute;
+	width: 100%;
+}
+#wrap {
+	width:820px;
+	padding:0 80px;
+	margin: auto;
+}
+#intro {
+	background: url('@{urlRoot}check_text.png') 20px no-repeat;
+	height: 150px;
+	float: left;
+	width: 100%
+}
+#content {
+	float: left;
+	width: 100%
+}
+.col1 {
+	float: left;
+	width: 50%;
+	.panel {
+		margin: 0 25px 0 -25px;
+		background-position: top left;
+	}
+	.button {
+		right: 9px;
+	}
+}
+
+.col2 {
+	float: right;
+	width: 50%;
+	.panel {
+		background-position: top right;
+	}
+	.button {
+		right: 9px;
+	}
+	.alt {
+		background-position: 25px 2px;
+	}
+}
+
+.panel, .alt {
+	width: 409px;
+	height: 253px;
+	float: left;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.hitbox {
+	margin-top: 10px;
+	width: 365px;
+	height: 192px;
+	margin-left: 35px;
+	position: absolute;
+}
+.alt {
+	position: absolute;
+	float: none;
+	left: -9999em;
+	background-position: 27px 3px;
+	&.ready {
+		display: none;
+		left: auto;
+	}
+}
+
+.button {
+	width: 76px;
+	height: 22px;
+	background-position: top;
+	background-image: url('@{urlRoot}bt_horario.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 208px;
+	cursor: pointer;
+	&:hover, &.active {
+		background-position: bottom;
+	}
+}
+.bates {
+	background-image: url('@{urlRoot}placa_batesMotel.png');
+	.alt {
+		background-image: url('@{urlRoot}BatesMotel-Hover.png');
+	}
+}
+
+.elementry {
+	background-image: url('@{urlRoot}placa_elementary.png');
+	.alt {
+		background-image: url('@{urlRoot}Element-Hover.png');
+	}
+}
+
+.chicagofire {
+	background-image: url('@{urlRoot}placa_chicagoFire.png');
+	.alt {
+		background-image: url('@{urlRoot}ChicagoFire-Hover.png');
+	}
+}
+
+.bnb {
+	background-image: url('@{urlRoot}placa_beautyTheBeast.png');
+	.alt {
+		background-image: url('@{urlRoot}BEAUTY-THE-BEASTHover.png');
+	}
+}
+
+.lno_svu {
+	background-image: url('@{urlRoot}placa_lawOrder_SVU.png');
+	.alt {
+		background-image: url('@{urlRoot}LawOrderSVU-Hover.png');
+	}
+}
+
+.grimm {
+	background-image: url('@{urlRoot}placa_grimm.png');
+	.alt {
+		background-image: url('@{urlRoot}Grimm-Hover.png');
+	}
+}
+
+.house {
+	background-image: url('@{urlRoot}placa_house.png');
+	.alt {
+		background-image: url('@{urlRoot}House-Hover.png');
+	}
+}
+
+.lno {
+	background-image: url('@{urlRoot}placa_lawOrder.png');
+	.alt {
+		background-image: url('@{urlRoot}LawAndOrder-Hover.png');
+	}
+}
+
+.medium {
+	background-image: url('@{urlRoot}placa_medium.png');
+	.alt {
+		background-image: url('@{urlRoot}Medium-Hover.png');
+	}
+}
+
+.flashpoint {
+	background-image: url('@{urlRoot}placa_flashPoint.png');
+	.alt {
+		background-image: url('@{urlRoot}FlashPoint-Hover.png');
+	}
+}
+
+#footer {
+	width: 100%;
+	float: left;
+	height: 130px;
+	.grade {
+		width: 236px;
+		margin: 40px auto 0;
+		height: 51px;
+		background: url('@{urlRoot}bt_grade_completa.png') no-repeat;
+		background-position: top;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		&:hover, &.active {
+			background-position: bottom;
+		}
+	}
+}
+
+.maskGradeCompleto {
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+}
+
+.windowGradeCompleto {
+	position: relative;
+	width: 819px;
+	height: 1294px;
+	margin: auto;
+	margin-top: 80px;
+	background: url('@{urlRoot}gradeCompleta.jpg') no-repeat;
+}
+
+.closeGradeCompleto {
+	top: 10px;
+	right: 8px;
+	width: 70px;
+	height: 22px;
+	cursor: pointer;
+	position: absolute;
+}
